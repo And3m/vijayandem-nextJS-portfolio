@@ -101,10 +101,16 @@ export function ContactForm() {
                     projectType: ""
                 });
             } else {
-                const errorData = await response.json();
+                let errorData;
+                try {
+                    errorData = await response.json();
+                } catch (parseError) {
+                    console.error('Failed to parse error response:', parseError);
+                    errorData = { error: 'Server error occurred' };
+                }
                 console.error('Email sending failed:', errorData);
                 setSubmitStatus('error');
-                setErrorMessage(errorData.error || 'Failed to send message. Please try again.');
+                setErrorMessage(errorData.error || errorData.message || 'Failed to send message. Please try again.');
             }
         } catch (error) {
             console.error('Error sending email:', error);

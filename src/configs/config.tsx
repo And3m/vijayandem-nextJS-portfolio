@@ -70,20 +70,20 @@ export const appConfig: IAppConfig = {
     experience: [
         {
             id: "0",
-            companyName: "Independent Exploration",
+            companyName: "Strategic Career Transition",
             companyLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff6b35'%3E%3Cpath d='M12 2L3.09 8.26l1.78 10.8c.06.35.36.62.72.62h12.82c.36 0 .66-.27.72-.62L20.91 8.26L12 2zM11 16H8.5l1.5-4.5L11 16zm5 0h-2.5l1.5-4.5L16 16z'/%3E%3C/svg%3E",
-            isCurrentEmployer: true,
+            isCurrentEmployer: false,
             positions: [
                 {
                     id: "0-1",
                     title: "AI-Augmented Analytics Specialist",
-                    employmentPeriod: "Jan 2024 - Present",
+                    employmentPeriod: "Jan 2024- Present",
                     employmentType: "Independent Exploration",
-                    description: `Conducted extensive research into AI-driven analytics trends, including LLM integration in business intelligence.
-Designed and prototyped intelligent data products using LangChain, PandasAI, Streamlit, ChatGPT plugins, and OpenAI APIs.
-Developed proof-of-concept solutions for RAG-based architectures and natural language data interfaces.
-Contributed to open-source community with AI-focused analytics tools and business applications.
-Focused strategic upskilling in advanced analytics and scalable, next-gen analytics solutions.`,
+                    description: `- Conducted extensive research into AI-driven analytics trends, including LLM integration in business intelligence
+- Designed and prototyped intelligent data products using LangChain, PandasAI, Streamlit, ChatGPT plugins, and OpenAI APIs
+- Developed proof-of-concept solutions for RAG-based architectures and natural language data interfaces
+- Contributed to open-source community with AI-focused analytics tools and business applications
+- Focused strategic upskilling in advanced analytics and scalable, next-gen analytics solutions`,
                     icon: "ai",
                     skills: ["LangChain", "RAG", "LLMs", "PandasAI", "ChatGPT Plugins", "OpenAI APIs", "Streamlit"],
                     isExpanded: true,
@@ -100,10 +100,10 @@ Focused strategic upskilling in advanced analytics and scalable, next-gen analyt
                     title: "Business Analyst",
                     employmentPeriod: "Mar 2022 - Dec 2023",
                     employmentType: "Full-time",
-                    description: `Conducted data-driven market research and customer behavior analysis using Neilsen/Kantar.
-Delivered predictive insights to C-suite for marketing strategy and campaign effectiveness.
-Collaborated cross-functionally to execute marketing plans based on analytics and KPIs.
-Led performance tracking, budget analysis, and reporting through automated dashboards (Power BI).`,
+                    description: `- Conducted data-driven market research and customer behavior analysis using Neilsen/Kantar
+- Delivered predictive insights to C-suite for marketing strategy and campaign effectiveness
+- Collaborated cross-functionally to execute marketing plans based on analytics and KPIs
+- Led performance tracking, budget analysis, and reporting through automated dashboards (Power BI)`,
                     icon: "business",
                     skills: ["Power BI", "Market Research", "Predictive Analytics", "KPIs"],
                     isExpanded: true,
@@ -120,10 +120,10 @@ Led performance tracking, budget analysis, and reporting through automated dashb
                     title: "Marketing Analyst",
                     employmentPeriod: "Jul 2016 - Mar 2022",
                     employmentType: "Full-time",
-                    description: `Designed and automated global marketing dashboards for performance and revenue pipeline analysis.
-Provided strategic marketing recommendations using SQL, Python, and visualization tools.
-Researched competitive strategy and built insights dashboards for global leaders.
-Drove process optimization and operational efficiency through analytics and automation.`,
+                    description: `- Designed and automated global marketing dashboards for performance and revenue pipeline analysis
+- Provided strategic marketing recommendations using SQL, Python, and visualization tools
+- Researched competitive strategy and built insights dashboards for global leaders
+- Drove process optimization and operational efficiency through analytics and automation`,
                     icon: "code",
                     skills: ["SQL", "Python", "Power BI", "Tableau", "Marketing Analytics"],
                     isExpanded: true,
@@ -140,9 +140,9 @@ Drove process optimization and operational efficiency through analytics and auto
                     title: "Marketing and Sales Analyst",
                     employmentPeriod: "Aug 2015 – May 2016",
                     employmentType: "Full-time",
-                    description: `Delivered automated marketing and sales performance reports using data mining and visualization.
-Created dashboards and answered ad-hoc business queries by analyzing large datasets.
-Supported consulting initiatives by identifying customer insights and improving data presentation.`,
+                    description: `- Delivered automated marketing and sales performance reports using data mining and visualization
+- Created dashboards and answered ad-hoc business queries by analyzing large datasets
+- Supported consulting initiatives by identifying customer insights and improving data presentation`,
                     icon: "code",
                     skills: ["Data Mining", "Visualization", "Reporting", "Excel"],
                     isExpanded: true,
@@ -159,8 +159,8 @@ Supported consulting initiatives by identifying customer insights and improving 
                     title: "Data Analyst",
                     employmentPeriod: "Mar 2011 – Aug 2015",
                     employmentType: "Full-time",
-                    description: `Developed and automated reports/dashboards using Excel, SQL, VBA, and MS Access for tax processing insights.
-Translated business requirements into reporting solutions for decision-making and improvements.`,
+                    description: `- Developed and automated reports/dashboards using Excel, SQL, VBA, and MS Access for tax processing insights
+- Translated business requirements into reporting solutions for decision-making and improvements`,
                     icon: "code",
                     skills: ["Excel", "SQL", "VBA", "MS Access", "Reporting"],
                     isExpanded: true,

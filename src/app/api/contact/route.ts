@@ -117,13 +117,29 @@ export async function POST(request: NextRequest) {
         console.error('Email sending error:', error);
         
         // Log more detailed error information for debugging
+        let errorMessage = 'Failed to send email. Please try again or contact directly via email.';
+        let errorDetails = '';
+        
         if (error instanceof Error) {
             console.error('Error message:', error.message);
             console.error('Error stack:', error.stack);
+            errorDetails = error.message;
+            
+            // Handle specific error cases
+            if (error.message.includes('Invalid login')) {
+                errorMessage = 'Email service authentication failed. Please contact the site administrator.';
+            } else if (error.message.includes('ENOTFOUND') || error.message.includes('ECONNREFUSED')) {
+                errorMessage = 'Unable to connect to email service. Please try again later.';
+            } else if (error.message.includes('timeout')) {
+                errorMessage = 'Email service timeout. Please try again.';
+            }
         }
         
         return NextResponse.json(
-            { error: 'Failed to send email. Please try again or contact directly via email.' },
+            { 
+                error: errorMessage,
+                details: process.env.NODE_ENV === 'development' ? errorDetails : undefined
+            },
             { status: 500 }
         );
     }
