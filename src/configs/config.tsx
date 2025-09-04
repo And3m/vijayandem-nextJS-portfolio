@@ -70,43 +70,60 @@ export const appConfig: IAppConfig = {
     experience: [
         {
             id: "0",
-            companyName: "Cavinkare Pvt Ltd",
-            companyLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E",
+            companyName: "Independent Exploration",
+            companyLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff6b35'%3E%3Cpath d='M12 2L3.09 8.26l1.78 10.8c.06.35.36.62.72.62h12.82c.36 0 .66-.27.72-.62L20.91 8.26L12 2zM11 16H8.5l1.5-4.5L11 16zm5 0h-2.5l1.5-4.5L16 16z'/%3E%3C/svg%3E",
             isCurrentEmployer: true,
             positions: [
                 {
                     id: "0-1",
-                    title: "Business Analyst and AI-Augmented Analytics",
-                    employmentPeriod: "Mar 2022 - Present",
-                    employmentType: "Full-time",
-                    description: `- Conducted extensive research into AI-driven analytics trends, including LLM integration in business intelligence.
-- Designed and prototyped intelligent data products using LangChain, PandasAI, Streamlit, and OpenAI APIs.
-- Developed proof-of-concept solutions for RAG-based architectures and natural language data interfaces.
-- Contributed to open-source community with AI-focused analytics tools and business applications.
-- Conducted data-driven market research and customer behavior analysis using Nielsen/Kantar.
-- Delivered predictive insights to C-suite for marketing strategy and campaign effectiveness.
-- Collaborated cross-functionally to execute marketing plans based on analytics and KPIs.
-- Led performance tracking, budget analysis, and reporting through automated dashboards (Power BI).`,
+                    title: "AI-Augmented Analytics Specialist",
+                    employmentPeriod: "Jan 2024 - Present",
+                    employmentType: "Independent Exploration",
+                    description: `Conducted extensive research into AI-driven analytics trends, including LLM integration in business intelligence.
+Designed and prototyped intelligent data products using LangChain, PandasAI, Streamlit, ChatGPT plugins, and OpenAI APIs.
+Developed proof-of-concept solutions for RAG-based architectures and natural language data interfaces.
+Contributed to open-source community with AI-focused analytics tools and business applications.
+Focused strategic upskilling in advanced analytics and scalable, next-gen analytics solutions.`,
                     icon: "ai",
-                    skills: ["LangChain", "RAG", "LLMs", "PandasAI", "OpenAI APIs", "Streamlit", "Power BI", "Market Research", "Predictive Analytics", "KPIs"],
+                    skills: ["LangChain", "RAG", "LLMs", "PandasAI", "ChatGPT Plugins", "OpenAI APIs", "Streamlit"],
                     isExpanded: true,
                 },
             ],
         },
         {
             id: "1",
+            companyName: "Cavinkare Pvt Ltd",
+            companyLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234f46e5'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E",
+            positions: [
+                {
+                    id: "1-1",
+                    title: "Business Analyst",
+                    employmentPeriod: "Mar 2022 - Dec 2023",
+                    employmentType: "Full-time",
+                    description: `Conducted data-driven market research and customer behavior analysis using Neilsen/Kantar.
+Delivered predictive insights to C-suite for marketing strategy and campaign effectiveness.
+Collaborated cross-functionally to execute marketing plans based on analytics and KPIs.
+Led performance tracking, budget analysis, and reporting through automated dashboards (Power BI).`,
+                    icon: "business",
+                    skills: ["Power BI", "Market Research", "Predictive Analytics", "KPIs"],
+                    isExpanded: true,
+                },
+            ],
+        },
+        {
+            id: "2",
             companyName: "IBM India Pvt Ltd",
             companyLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23006699'%3E%3Cpath d='M0 0h8v3H0V0zm0 4h8v3H0V4zm0 4h8v3H0V8zm0 4h8v3H0v-3zm0 4h8v3H0v-3zm0 4h8v1H0v-1zM9 0h6v2H9V0zm0 3h6v2H9V3zm0 3h6v2H9V6zm0 3h6v2H9V9zm0 3h6v2H9v-2zm0 3h6v2H9v-2zm0 3h6v1H9v-1zM16 0h8v3h-8V0zm0 4h8v3h-8V4zm0 4h8v3h-8V8zm0 4h8v3h-8v-3zm0 4h8v3h-8v-3zm0 4h8v1h-8v-1z'/%3E%3C/svg%3E",
             positions: [
                 {
-                    id: "1-1",
+                    id: "2-1",
                     title: "Marketing Analyst",
                     employmentPeriod: "Jul 2016 - Mar 2022",
                     employmentType: "Full-time",
-                    description: `- Designed and automated global marketing dashboards for performance and revenue pipeline analysis.
-- Provided strategic marketing recommendations using SQL, Python, and visualization tools.
-- Researched competitive strategy and built insights dashboards for global leaders.
-- Drove process optimization and operational efficiency through analytics and automation.`,
+                    description: `Designed and automated global marketing dashboards for performance and revenue pipeline analysis.
+Provided strategic marketing recommendations using SQL, Python, and visualization tools.
+Researched competitive strategy and built insights dashboards for global leaders.
+Drove process optimization and operational efficiency through analytics and automation.`,
                     icon: "code",
                     skills: ["SQL", "Python", "Power BI", "Tableau", "Marketing Analytics"],
                     isExpanded: true,
@@ -114,18 +131,18 @@ export const appConfig: IAppConfig = {
             ],
         },
         {
-            id: "2",
+            id: "3",
             companyName: "Indegene Life Systems Pvt Ltd",
             companyLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300a86b'%3E%3Cpath d='M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-2V2.5a.5.5 0 0 0-.5-.5h-13a.5.5 0 0 0-.5.5V4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM4 18V6h16v12H4z'/%3E%3C/svg%3E",
             positions: [
                 {
-                    id: "2-1",
-                    title: "Reporting Analyst",
+                    id: "3-1",
+                    title: "Marketing and Sales Analyst",
                     employmentPeriod: "Aug 2015 – May 2016",
                     employmentType: "Full-time",
-                    description: `- Delivered automated marketing and sales performance reports using data mining and visualization.
-- Created dashboards and answered ad-hoc business queries by analyzing large datasets.
-- Supported consulting initiatives by identifying customer insights and improving data presentation.`,
+                    description: `Delivered automated marketing and sales performance reports using data mining and visualization.
+Created dashboards and answered ad-hoc business queries by analyzing large datasets.
+Supported consulting initiatives by identifying customer insights and improving data presentation.`,
                     icon: "code",
                     skills: ["Data Mining", "Visualization", "Reporting", "Excel"],
                     isExpanded: true,
@@ -133,17 +150,17 @@ export const appConfig: IAppConfig = {
             ],
         },
         {
-            id: "3",
+            id: "4",
             companyName: "Infosys Ltd",
             companyLogo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23007acc'%3E%3Cpath d='M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z'/%3E%3Cpath d='M12 6a6 6 0 1 0 6 6 6 6 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4 4 0 0 1-4 4z'/%3E%3C/svg%3E",
             positions: [
                 {
-                    id: "3-1",
+                    id: "4-1",
                     title: "Data Analyst",
                     employmentPeriod: "Mar 2011 – Aug 2015",
                     employmentType: "Full-time",
-                    description: `- Developed and automated reports/dashboards using Excel, SQL, VBA, and MS Access for tax processing insights.
-- Translated business requirements into reporting solutions for decision-making and improvements.`,
+                    description: `Developed and automated reports/dashboards using Excel, SQL, VBA, and MS Access for tax processing insights.
+Translated business requirements into reporting solutions for decision-making and improvements.`,
                     icon: "code",
                     skills: ["Excel", "SQL", "VBA", "MS Access", "Reporting"],
                     isExpanded: true,

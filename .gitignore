@@ -54,6 +54,16 @@ temp/
 # Claude Code directory
 .claude/
 
+# Additional security patterns
+portfolio_fresh/
+*.backup
+*.bak
+*~
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
 # vercel
 .vercel
 

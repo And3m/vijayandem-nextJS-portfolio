@@ -258,6 +258,14 @@ This portfolio represents professional work and personal projects. For collabora
 2. **LinkedIn Connection**: Professional networking and project discussions  
 3. **Email Direct**: For urgent professional inquiries
 
+## 🔒 Security & Privacy
+
+This repository follows strict security practices:
+- ✅ Environment files are properly excluded from version control
+- ✅ Sensitive credentials are never committed
+- ✅ Build artifacts and temporary files are ignored
+- ✅ Development tools configuration kept local
+
 ## 📄 License & Usage
 
 This project is **private and proprietary**. The code serves as a demonstration of technical capabilities and professional experience.
