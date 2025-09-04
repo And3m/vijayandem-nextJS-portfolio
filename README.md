@@ -1,6 +1,6 @@
-# Vijay K Andem - Gen-AI Enthusiast & Business Analyst Portfolio
+# Modern Business Analyst Portfolio Template
 
-A comprehensive, modern portfolio website built with Next.js 15, showcasing 13+ years of experience in business analysis, data visualization, and AI-augmented analytics. This portfolio serves as both a professional showcase and a demonstration of cutting-edge web development practices.
+A comprehensive, modern portfolio website built with Next.js 15, perfect for business analysts, data visualization specialists, and professionals in analytics. This template demonstrates cutting-edge web development practices while showcasing professional experience and skills.
 
 ## 🚀 Key Features
 
@@ -14,9 +14,9 @@ A comprehensive, modern portfolio website built with Next.js 15, showcasing 13+ 
 ### 💼 **Professional Showcase**
 - **Tech Stack Visualization**: Interactive 3D cloud of technologies with hover effects and tooltips
 - **Comprehensive Experience**: Detailed work history with achievements and key projects
-- **Project Portfolio**: Advanced carousel showcasing data visualization and analytics projects
+- **Project Portfolio**: Advanced carousel showcasing projects and work samples
 - **Resume Integration**: Modal-based resume viewing and direct PDF download functionality
-- **Professional Branding**: Cohesive brand identity as "Gen-AI Enthusiast"
+- **Professional Branding**: Cohesive brand identity and messaging
 
 ### 🤖 **AI Integration & Modern Features**
 - **Ask AI Button**: Multi-platform AI integration allowing visitors to ask questions about the portfolio
@@ -58,7 +58,7 @@ A comprehensive, modern portfolio website built with Next.js 15, showcasing 13+ 
 
 ### **Deployment & Infrastructure**
 - **Platform**: Vercel with automatic deployments
-- **Domain**: Custom domain with SSL
+- **Domain**: Custom domain with SSL support
 - **Environment**: Production/Preview environment separation
 - **Monitoring**: Function logs and error tracking
 
@@ -74,8 +74,8 @@ A comprehensive, modern portfolio website built with Next.js 15, showcasing 13+ 
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/And3m/vijayandem.github.io.git
-cd vijay-k-andem-portfolio
+git clone <your-repository-url>
+cd your-portfolio
 ```
 
 2. **Install dependencies:**
@@ -85,22 +85,36 @@ npm install
 yarn install
 ```
 
-3. **Environment Configuration (Optional for local development):**
+3. **Environment Configuration:**
 ```bash
 # Copy example environment file
-cp .env.local.example .env.local
+cp .env.example .env.local
 
-# Edit .env.local with your configuration (only needed for contact form testing)
+# Edit .env.local with your email configuration
 ```
 
-4. **Run the development server:**
+4. **Configuration Setup:**
+```bash
+# Copy configuration templates
+cp src/configs/config.example.tsx src/configs/config.tsx
+cp src/configs/site.example.ts src/configs/site.ts
+
+# Customize these files with your information
+```
+
+5. **Add your assets:**
+   - Add your profile image to `public/hero/profile.jpg`
+   - Add your resume to `public/resume.pdf`
+   - Update project images in `public/projects/`
+
+6. **Run the development server:**
 ```bash
 npm run dev
 # or
 yarn dev
 ```
 
-5. **Open your browser:**
+7. **Open your browser:**
    - Navigate to [http://localhost:3000](http://localhost:3000)
    - The page will auto-reload as you make changes
 
@@ -111,12 +125,23 @@ yarn dev
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint for code quality checks
 
-### Development Features
+## 📧 Email Configuration
 
-- **Hot Reload**: Instant updates during development
-- **TypeScript**: Full type checking and IntelliSense
-- **Linting**: Automatic code quality checks
-- **Component Development**: Modular component architecture
+For the contact form to work, you'll need to set up Gmail SMTP:
+
+1. **Enable 2FA on your Gmail account**
+2. **Generate an App Password**:
+   - Go to Google Account settings
+   - Security → 2-Step Verification → App passwords
+   - Generate a password for "Mail"
+3. **Update .env.local**:
+   ```
+   SMTP_EMAIL=your-email@gmail.com
+   SMTP_PASSWORD=your-16-character-app-password
+   CONTACT_EMAIL=your-email@gmail.com
+   ```
+
+See [SETUP.md](./SETUP.md) for detailed configuration instructions.
 
 ## 📁 Project Structure
 
@@ -124,156 +149,84 @@ yarn dev
 ├── src/
 │   ├── app/                    # Next.js App Router
 │   │   ├── (root)/            # Main application routes
-│   │   │   ├── about/         # About page
-│   │   │   ├── contact/       # Contact page with form
-│   │   │   ├── experience/    # Professional experience
-│   │   │   └── projects/      # Project portfolio
-│   │   ├── (llm)/            # AI/LLM optimized endpoints
-│   │   │   ├── about.md/     # Structured about data
-│   │   │   ├── projects.md/  # Structured project data
-│   │   │   └── llms.txt/     # LLM consumption format
-│   │   ├── api/              # API routes
-│   │   │   └── contact/      # Contact form submission
-│   │   ├── layout.tsx        # Root layout with metadata
-│   │   └── page.tsx          # Homepage
+│   │   ├── (llm)/             # AI/LLM optimized endpoints
+│   │   ├── api/               # API routes
+│   │   ├── layout.tsx         # Root layout with metadata
+│   │   └── page.tsx           # Homepage
 │   ├── components/            # Reusable React components
-│   │   ├── common/           # Shared components
-│   │   │   ├── ask-ai-button.tsx     # AI integration button
-│   │   │   ├── contact-form.tsx      # Contact form with validation
-│   │   │   ├── resume-modal.tsx      # Resume viewer modal
-│   │   │   └── theme-toggle.tsx      # Dark/light mode switch
-│   │   ├── hero/             # Hero section components
-│   │   ├── nav/              # Navigation components
-│   │   ├── projects/         # Project showcase components
-│   │   ├── techs/            # Technology visualization
-│   │   └── ui/               # Base UI primitives (Radix UI)
-│   ├── configs/              # Configuration files
-│   │   ├── site.ts           # Site metadata and SEO
-│   │   ├── nav.config.ts     # Navigation configuration
-│   │   └── projects.ts       # Project data
-│   ├── lib/                  # Utility functions
-│   ├── sections/             # Page sections and layouts
-│   └── types/                # TypeScript definitions
-├── public/                   # Static assets
-│   ├── branding/            # Logo and brand assets
-│   ├── hero/                # Profile images
-│   ├── projects/            # Project screenshots
-│   └── resume.pdf           # Downloadable resume
-├── VERCEL_SETUP.md          # Deployment guide
-└── README.md                # This file
+│   ├── configs/               # Configuration files
+│   ├── lib/                   # Utility functions
+│   ├── sections/              # Page sections and layouts
+│   └── types/                 # TypeScript definitions
+├── public/                    # Static assets
+│   ├── branding/             # Logo and brand assets
+│   ├── hero/                 # Profile images
+│   └── projects/             # Project screenshots
+├── SETUP.md                  # Configuration guide
+└── README.md                 # This file
 ```
 
 ## 🚀 Deployment
 
-### Production Deployment on Vercel
+### Vercel (Recommended)
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Deploy automatically!
 
-The portfolio is optimized for seamless deployment on Vercel with automatic builds and deployments.
+### Other Platforms
+The project is compatible with:
+- Netlify
+- Railway
+- AWS Amplify
+- Any Next.js hosting platform
 
-#### **Prerequisites for Production:**
-- Vercel account connected to your GitHub repository
-- Environment variables configured (see [VERCEL_SETUP.md](./VERCEL_SETUP.md))
+See [VERCEL_SETUP.md](./VERCEL_SETUP.md) for detailed deployment instructions.
 
-#### **Deployment Steps:**
+## 🎨 Customization
 
-1. **Build locally (optional):**
-```bash
-npm run build
-```
+### Personal Information
+Edit `src/configs/config.tsx`:
+- Update profile information
+- Add your experience/work history
+- Customize social media links
+- Modify skills and technologies
 
-2. **Automatic Deployment:**
-   - Push to `main` branch triggers automatic deployment
-   - Preview deployments created for all pull requests
-   - Custom domains supported with SSL
+### Site Metadata
+Edit `src/configs/site.ts`:
+- Update site title and description
+- Modify SEO keywords
+- Update the about me section
 
-3. **Environment Configuration:**
-   - Contact form requires SMTP credentials
-   - See [VERCEL_SETUP.md](./VERCEL_SETUP.md) for detailed setup
+### Projects
+Edit `src/configs/projects.ts`:
+- Add your projects
+- Include screenshots, descriptions, and tech stacks
+- Add live demo and GitHub links
 
-#### **Production Features:**
-- ⚡ **Edge Runtime**: Optimized for global performance
-- 🔒 **SSL Certificate**: Automatic HTTPS with custom domain
-- 📊 **Analytics**: Built-in Vercel Analytics integration
-- 🚀 **CDN**: Global content delivery network
-- 📱 **Mobile Optimization**: PWA-ready with responsive design
-
-#### **Monitoring & Maintenance:**
-- Real-time function logs in Vercel dashboard
-- Automatic error tracking and notifications
-- Performance monitoring with Core Web Vitals
-- Uptime monitoring and status checks
-
-### Alternative Deployment Options
-
-While optimized for Vercel, the portfolio can be deployed on:
-- **Netlify**: Static site generation
-- **AWS Amplify**: Full-stack deployment
-- **Docker**: Containerized deployment
-- **Traditional hosting**: Static export available
+### Styling
+The project uses Tailwind CSS. Customize:
+- `src/app/globals.css` for global styles
+- Component-specific styles in their respective files
 
 ## 🔧 Key Features Deep Dive
 
 ### 🤖 **AI Integration**
-The portfolio includes a sophisticated "Ask AI" button that allows visitors to inquire about professional experience, projects, or skills through multiple AI platforms:
-- **Multi-Platform Support**: Claude, ChatGPT, Gemini, and Perplexity integration
-- **Contextual Queries**: Pre-built prompts for common inquiries
-- **LLM-Optimized Content**: Special endpoints providing structured data for AI consumption
+The portfolio includes a sophisticated "Ask AI" button that allows visitors to inquire about professional experience, projects, or skills through multiple AI platforms.
 
 ### 📧 **Contact System**
-Professional-grade contact form with robust backend processing:
-- **Server-Side Validation**: Comprehensive form validation and sanitization
-- **Email Integration**: Nodemailer with Gmail SMTP for reliable delivery
-- **Error Handling**: Detailed error messages and fallback contact information
-- **Responsive Design**: Mobile-optimized form with real-time validation
+Professional-grade contact form with robust backend processing and email integration.
 
 ### 📊 **Analytics & SEO**
-Built-in analytics and search engine optimization:
-- **Vercel Analytics**: Privacy-focused visitor tracking
-- **Structured Data**: Rich snippets for search engines
-- **Open Graph Tags**: Social media optimization
-- **Performance Monitoring**: Core Web Vitals tracking
+Built-in analytics and search engine optimization for maximum visibility.
 
-## 🏆 Professional Highlights
+## 🤝 Contributing
 
-This portfolio showcases expertise in:
-- **Business Analysis**: 13+ years of experience in data-driven decision making
-- **Data Visualization**: Advanced Power BI and Tableau implementations
-- **AI Integration**: Cutting-edge AI tools and workflow optimization
-- **Full-Stack Development**: Modern web development with latest technologies
-- **User Experience**: Professional design and intuitive navigation
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-## 📧 Contact & Professional Links
+## 📄 License
 
-**Vijay K Andem - Gen-AI Enthusiast & Business Analyst**
-- 📧 **Email**: [vijayandem@gmail.com](mailto:vijayandem@gmail.com)
-- 🌍 **Location**: Bengaluru, India
-- 💼 **LinkedIn**: [vijay-andem](https://www.linkedin.com/in/vijay-andem-b2092223/)
-- 🌐 **Portfolio**: [Live Demo](https://vijayandem.vercel.app)
-- 📄 **Resume**: Available for download on the website
-
-## 🤝 Contributing & Feedback
-
-This portfolio represents professional work and personal projects. For collaboration inquiries or professional opportunities:
-
-1. **Use the Contact Form**: Available on the website with direct email delivery
-2. **LinkedIn Connection**: Professional networking and project discussions  
-3. **Email Direct**: For urgent professional inquiries
-
-## 🔒 Security & Privacy
-
-This repository follows strict security practices:
-- ✅ Environment files are properly excluded from version control
-- ✅ Sensitive credentials are never committed
-- ✅ Build artifacts and temporary files are ignored
-- ✅ Development tools configuration kept local
-
-## 📄 License & Usage
-
-This project is **private and proprietary**. The code serves as a demonstration of technical capabilities and professional experience.
-
-- ✅ **Viewing and learning** from the code structure
-- ✅ **Inspiration** for your own portfolio projects
-- ❌ **Direct copying** of content or professional information
-- ❌ **Commercial use** without explicit permission
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
@@ -286,4 +239,4 @@ Special thanks to:
 
 ---
 
-**Built with ❤️ by Vijay K Andem | Gen-AI Enthusiast & Business Analyst**
+**Ready to build your professional portfolio? Follow the setup guide and customize it with your information!**
