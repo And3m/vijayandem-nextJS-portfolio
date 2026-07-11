@@ -1,0 +1,2 @@
+import * as React from "react";
+export function VerifiedIcon(props: React.SVGProps<SVGSVGElement>) { return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" {...props}><path d="m23.4 12-2.1-2.4.3-3.2-3.1-.7L16.9 3 14 4.3 12 2 9.9 4.3 7 3 5.5 5.7l-3.1.7.3 3.2L.6 12l2.1 2.4-.3 3.2 3.1.7L7 21l2.9-1.3L12 22l2.1-2.3L17 21l1.5-2.7 3.1-.7-.3-3.2L23.4 12Zm-12.7 4.2-4-4 1.4-1.4 2.6 2.6 5.8-5.8L18 9l-7.3 7.2Z" /></svg>; }
