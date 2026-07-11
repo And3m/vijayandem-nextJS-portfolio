@@ -1,15 +1,55 @@
 import { NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+const fieldLimits = {
+    name: 100,
+    email: 254,
+    company: 100,
+    subject: 200,
+    message: 5000,
+    projectType: 100,
+};
+
+function escapeHtml(value: string) {
+    return value.replace(/[&<>'"]/g, (character) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;',
+    })[character] as string);
+}
+
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { name, email, company, subject, message, projectType } = body;
+        const fields = ['name', 'email', 'company', 'subject', 'message', 'projectType'] as const;
+
+        if (!body || typeof body !== 'object' || fields.some((field) => body[field] !== undefined && typeof body[field] !== 'string')) {
+            return NextResponse.json(
+                { error: 'Invalid form data' },
+                { status: 400 }
+            );
+        }
+
+        const name = body.name?.trim() ?? '';
+        const email = body.email?.trim() ?? '';
+        const company = body.company?.trim() ?? '';
+        const subject = body.subject?.trim() ?? '';
+        const message = body.message?.trim() ?? '';
+        const projectType = body.projectType?.trim() ?? '';
 
         // Validate required fields
         if (!name || !email || !subject || !message) {
             return NextResponse.json(
                 { error: 'Missing required fields' },
+                { status: 400 }
+            );
+        }
+
+        if (fields.some((field) => (body[field]?.trim().length ?? 0) > fieldLimits[field])) {
+            return NextResponse.json(
+                { error: 'One or more fields exceed the allowed length' },
                 { status: 400 }
             );
         }
@@ -66,23 +106,23 @@ export async function POST(request: NextRequest) {
                     
                     <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
                         <h3 style="color: #007bff; margin-top: 0;">Contact Details</h3>
-                        <p><strong>Name:</strong> ${name}</p>
-                        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-                        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
-                        ${projectType ? `<p><strong>Project Type:</strong> ${projectType}</p>` : ''}
+                        <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+                        <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
+                        ${company ? `<p><strong>Company:</strong> ${escapeHtml(company)}</p>` : ''}
+                        ${projectType ? `<p><strong>Project Type:</strong> ${escapeHtml(projectType)}</p>` : ''}
                     </div>
                     
                     <div style="background: #ffffff; padding: 20px; border-left: 4px solid #007bff; margin: 20px 0;">
                         <h3 style="color: #333; margin-top: 0;">Subject</h3>
-                        <p>${subject}</p>
+                        <p>${escapeHtml(subject)}</p>
                         
                         <h3 style="color: #333;">Message</h3>
-                        <p style="line-height: 1.6; white-space: pre-wrap;">${message}</p>
+                        <p style="line-height: 1.6; white-space: pre-wrap;">${escapeHtml(message)}</p>
                     </div>
                     
                     <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 12px; color: #666;">
                         <p>This email was sent from your portfolio contact form.</p>
-                        <p>Reply directly to this email to respond to ${name} at ${email}</p>
+                        <p>Reply directly to this email to respond to ${escapeHtml(name)} at ${escapeHtml(email)}</p>
                     </div>
                 </div>
             `,
